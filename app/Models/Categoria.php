@@ -7,4 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
+  use HasFactory;
+  protected $fillable = [
+    'nomeCat'
+  ];
+
+  public function categorias()
+  {
+    return $this->hasMany(Produto::class);
+  }
 }
